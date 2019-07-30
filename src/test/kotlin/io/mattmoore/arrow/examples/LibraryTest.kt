@@ -21,4 +21,11 @@ class LibraryTest {
     @Test fun `passing an unacceptable value and using getOrElse`() {
         assertEquals(classUnderTest.someValue("Unacceptable").getOrElse { "No value" }, "No value")
     }
+
+    @Test fun `Dave's test`() {
+      val some10 = Some(10)
+      val some11 = some10.map { it + 1 }
+      val result = "Some 11 = " + some11.getOrElse { "n/a" }
+      assertEquals(result, "Some 11 = 11")
+    }
 }
